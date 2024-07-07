@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Feature1 from "../../public/assets/feature-1.svg";
 import Check from "../../public/assets/check.svg";
 import bluebutton from "../../public/assets/blue-button.svg";
+import Link from "next/link";
 
 export function FeatureFirst() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,6 +23,7 @@ export function FeatureFirst() {
       },
       { threshold: 1.0 }
     );
+    console.log("observe")
 
     if (divRef1.current) {
       observer.observe(divRef1.current);
@@ -39,10 +41,10 @@ export function FeatureFirst() {
       ref={divRef1}
     >
       <Image
-        src={Feature1}
+        src={Feature1}  
         alt="Feature 1 image"
-        className={`hidden w-1/2 sm:block transform transition-transform duration-1000 ease-in-out ${
-          isVisible ? "translate-x-0" : "translate-x-full"
+        className={`hidden w-1/2 sm:block image-animation ${
+          isVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
       />
       <div className="sm:w-1/2 lg:py-[56px] lg:pr-[56px]">
@@ -50,7 +52,7 @@ export function FeatureFirst() {
           Sales Monitoring
         </h3>
         <h1 className="pt-[12px] text-2xl font-medium text-[#172026] lg:text-[42px] lg:leading-[58px]">
-          Simplify your sales monitoring
+          Streamline Your Sales Monitoring
         </h1>
         <Image
           src={Feature1}
@@ -58,9 +60,8 @@ export function FeatureFirst() {
           className="pt-[24px] sm:hidden"
         />
         <p className="py-[24px] text-[#36485C] lg:text-[18px]">
-          Stay on top of things and revamp your work process with our
-          game-changing feature. Get a bird’s eye view with our customizable
-          dashboard.
+          Enhance your workflow with our innovative sales monitoring feature.
+          Gain comprehensive insights with our customizable dashboard.
         </p>
 
         <ul className="flex flex-col gap-y-3 lg:text-[18px]">
@@ -68,28 +69,28 @@ export function FeatureFirst() {
             <span>
               <Image src={Check} alt="Checkmark" />
             </span>
-            Lorem ipsum dolor sit amet
+            Comprehensive sales tracking
           </li>
           <li className="flex items-center gap-x-2 text-[#36485C]">
             <span>
               <Image src={Check} alt="Checkmark" />
             </span>
-            Lorem ipsum dolor sit amet
+            Customizable reporting
           </li>
           <li className="flex items-center gap-x-2 text-[#36485C]">
             <span>
               <Image src={Check} alt="Checkmark" />
             </span>
-            Lorem ipsum dolor sit amet
+            Real-time data analysis
           </li>
         </ul>
 
-        <p className="flex items-center gap-x-2 pt-[24px] font-medium text-[#0085FF] lg:text-[18px] cursor-pointer">
+        <Link href="" className="inline-flex items-center gap-x-2 pt-[24px] font-medium  text-[#0085FF] lg:text-[18px] cursor-pointer group">
           Learn More
-          <span className="transform transition-transform duration-300 hover:scale-110">
+          <span className="transition duration-500 group-hover:translate-x-2">
             <Image src={bluebutton} alt="Learn more" />
           </span>
-        </p>
+        </Link>
       </div>
     </div>
   );

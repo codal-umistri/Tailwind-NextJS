@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import pinkButton from "../../public/assets/pink-button.svg";
 import Feature3 from "../../public/assets/feature-3.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export function FeatureThird() {
   const [isVisible3, setIsVisible3] = useState(false);
@@ -42,8 +43,8 @@ export function FeatureThird() {
       <Image
         src={Feature3}
         alt="Feature 1 image"
-        className={`hidden w-1/2 sm:block transform transition-transform duration-1000 ease-in-out ${
-          isVisible3 ? "translate-x-0" : "translate-x-full"
+        className={`hidden w-1/2 sm:block image-animation ${
+          isVisible3 ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
       />
       <div className="sm:w-1/2 lg:py-[56px] lg:pr-[56px]">
@@ -75,12 +76,12 @@ export function FeatureThird() {
           </div>
         </div>
 
-        <p className="flex items-center gap-x-2 pt-[24px] font-medium text-[#EB2891] lg:text-[18px] cursor-pointer">
-          Learn More{" "}
-          <span className="transform transition-transform duration-300 hover:scale-110">
+        <Link href="" className="inline-flex items-center gap-x-2 pt-[24px] font-medium text-[#EB2891] lg:text-[18px] cursor-pointer group">
+          Learn More
+          <span className="transition duration-500 group-hover:translate-x-2">
             <Image src={pinkButton} alt="Learn more" />
           </span>
-        </p>
+        </Link>
       </div>
     </div>
   );

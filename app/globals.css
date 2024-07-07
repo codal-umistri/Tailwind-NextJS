@@ -2,3 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/* or */
+@import 'animate.css/animate.min.css'; /* Import a specific file */
+
+
+@layer components{
+    .image-animation{
+        @apply transform transition duration-2000 ease-out;
+    }
+    .btn{
+        @apply px-4 py-3 font-medium rounded-md text-base transition duration-500; 
+    }
+    .btn-light{
+        @apply bg-white text-indigo-700 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white;
+    }
+
+    .image{
+        /* background-image: url('../public/assets/Gradient.svg');
+        background-size: 100% auto;
+        @apply bg-no-repeat bg-bottom; */
+
+    }
+    .image {
+        
+       
+        background: linear-gradient(45deg, #7c72f5, #cd48d7, #ff4871, #ff5134, #7c72f5, #cd48d7, #ff4871, #ff5134);
+        background-size: 200% 200%;
+        animation: gradient 15s ease infinite;
+        
+    }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    .image:before{
+        content:"";
+        position:absolute;
+        left:-1px;
+        right:-1px;
+        top:-1px;
+        height:180px;
+        
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(125,185,232,0) 100%);
+    filter: blur(0.5px);
+    }
+    
+}
+ 

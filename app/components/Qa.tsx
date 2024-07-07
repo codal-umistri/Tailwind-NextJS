@@ -1,7 +1,9 @@
-"use client"
+"use client";
 import * as Accordion from "@radix-ui/react-accordion";
 import Plus from "../../public/assets/Plus.svg";
+import Minus from "../../public/assets/image.png";
 import Image from "next/image";
+import { useState } from "react";
 
 const items = [
   {
@@ -31,21 +33,20 @@ const items = [
   },
 ];
 
-
-
 export function Qa() {
+  const [openItem, setOpenItem] = useState("item-1");
+
   return (
     <div className="flex flex-col w-full py-[48px] lg:py-[60px] lg:flex-row gap-x-6">
       <div className="lg:w-1/3 lg:py-[32px] lg:pr-[56px]">
         <h3 className="text-[#EB2891] text-[14px] font-medium lg:text-base">
-          Frquently Asked Qutiones
+          Frequently Asked Questions
         </h3>
         <h1 className="py-4 text-2xl font-medium lg:text-[42px] lg:leading-[58px]">
-          Lets clarify some of your questions
+        Addressing Your Common Queries
         </h1>
         <p className="text-[#36485C] pb-[24px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore{" "}
+        We are here to provide clarity on any questions you may have. Explore our FAQ section to find answers and get detailed information about our services.
         </p>
       </div>
 
@@ -55,6 +56,7 @@ export function Qa() {
           defaultValue="item-1"
           collapsible
           className="flex flex-col gap-y-4"
+          onValueChange={(value) => setOpenItem(value)}
         >
           {items.map((item, index) => (
             <div key={index}>
@@ -69,8 +71,12 @@ export function Qa() {
                     </p>
                     <span>
                       <Image
-                        src={Plus}
-                        alt="See more"
+                        src={openItem === `item-${index + 1}` ? Minus : Plus}
+                        alt={
+                          openItem === `item-${index + 1}`
+                            ? "See less"
+                            : "See more"
+                        }
                         className="h-10 w-10 lg:w-6 lg:h-6"
                       />
                     </span>

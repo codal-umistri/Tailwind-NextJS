@@ -1,9 +1,10 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Feature2 from "../../public/assets/feature-2.svg";
 import Check from "../../public/assets/check.svg";
-import bluebutton from "../../public/assets/blue-button.svg";
+import greenbutton from "../../public/assets/green-button.svg";
+import Link from "next/link";
 
 export function FeatureSecond() {
   const [isVisible2, setIsVisible2] = useState(false);
@@ -39,8 +40,8 @@ export function FeatureSecond() {
       <Image
         src={Feature2}
         alt="Feature 1 image"
-        className={`hidden w-1/2 sm:block transform transition-transform duration-1000 ease-in-out ${
-          isVisible2 ? "translate-x-0" : "-translate-x-full"
+        className={`hidden w-1/2 sm:block image-animation ${
+          isVisible2 ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
         }`}
       />
       <div className="sm:w-1/2 lg:py-[56px] lg:pl-[56px]">
@@ -48,7 +49,7 @@ export function FeatureSecond() {
           Customer Support
         </h3>
         <h1 className="pt-[12px] text-2xl font-medium text-[#172026] lg:text-[42px] lg:leading-[58px]">
-          Get in touch with your customers
+          Enhance Customer Communication
         </h1>
         <Image
           src={Feature2}
@@ -56,9 +57,9 @@ export function FeatureSecond() {
           className="pt-[24px] sm:hidden"
         />
         <p className="py-[24px] text-[#36485C] lg:text-[18px]">
-          Stay on top of things and revamp your work process with our
-          game-changing feature. Get a bird’s eye view with our customizable
-          dashboard.
+          Improve your customer interactions with our innovative support
+          feature. Access real-time insights and provide efficient support with
+          our intuitive tools.
         </p>
 
         <ul className="flex flex-col gap-y-3 lg:text-[18px]">
@@ -66,28 +67,28 @@ export function FeatureSecond() {
             <span>
               <Image src={Check} alt="Checkmark" />
             </span>
-            Lorem ipsum dolor sit amet
+            Real-time customer support
           </li>
           <li className="flex items-center gap-x-2 text-[#36485C]">
             <span>
               <Image src={Check} alt="Checkmark" />
             </span>
-            Lorem ipsum dolor sit amet
+            Comprehensive communication tools
           </li>
           <li className="flex items-center gap-x-2 text-[#36485C]">
             <span>
               <Image src={Check} alt="Checkmark" />
             </span>
-            Lorem ipsum dolor sit amet
+            Enhanced customer satisfaction
           </li>
         </ul>
 
-        <p className="flex items-center gap-x-2 pt-[24px] font-medium text-[#00A424] lg:text-[18px] cursor-pointer">
+        <Link href="" className="inline-flex items-center gap-x-2 pt-[24px] font-medium  text-[#00A424] lg:text-[18px] cursor-pointer group">
           Learn More
-          <span className="transform transition-transform duration-300 hover:scale-110">
-            <Image src={bluebutton} alt="Learn more" />
+          <span className="transition duration-500 group-hover:translate-x-2">
+            <Image src={greenbutton} alt="Learn more" />
           </span>
-        </p>
+        </Link>
       </div>
     </div>
   );

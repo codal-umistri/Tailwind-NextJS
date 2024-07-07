@@ -36,7 +36,7 @@ export function Footer() {
           <h3 className="text-3xl mb-3"> Download our fitness app </h3>
           <p> Stay fit. All day, every day. </p>
           <div className="flex justify-center my-10">
-            <div className="flex items-center border w-auto rounded-lg px-4 py-2 w-52 mx-2 transform transition-transform duration-300 hover:scale-105">
+            <div className="flex items-center border w-auto rounded-lg px-4 py-2  mx-2 ">
             <Image
                 src="https://cdn-icons-png.flaticon.com/512/888/888857.png"
                 alt="Google Play Store"
@@ -48,7 +48,7 @@ export function Footer() {
                 <p className="text-sm md:text-base"> Google Play Store </p>
               </div>
             </div>
-            <div className="flex items-center border w-auto rounded-lg px-4 py-2 w-44 mx-2 transform transition-transform duration-300 hover:scale-105">
+            <div className="flex items-center border w-auto rounded-lg px-4 py-2 mx-2 ]">
             <Image
                 src="https://cdn-icons-png.flaticon.com/512/888/888841.png"
                 alt="Apple Store"
